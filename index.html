@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Smart Event Manager</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Smart Event Manager</h1>
+            <p class="subtitle">Organize your events with style and ease</p>
+        </header>
+
+        <div class="main-content">
+            <div class="controls">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search events..." />
+                </div>
+                <div class="filter-container">
+                    <select id="categoryFilter">
+                        <option value="all">All Categories</option>
+                        <option value="work">Work</option>
+                        <option value="personal">Personal</option>
+                        <option value="hobby">Hobby</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <button class="btn btn-primary" id="addEventBtn">Add New Event</button>
+                </div>
+            </div>
+
+            <div class="events-grid" id="eventsGrid">
+                <div class="empty-state">
+                    <h3>No events yet</h3>
+                    <p>Click "Add New Event" to get started!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="eventModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Add New Event</h2>
+            </div>
+            <form id="eventForm">
+                <div class="form-group">
+                    <label class="form-label" for="eventTitle">Event Title</label>
+                    <input type="text" class="form-input" id="eventTitle" required />
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="eventDate">Date</label>
+                    <input type="date" class="form-input" id="eventDate" required />
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="eventCategory">Category</label>
+                    <select class="form-input" id="eventCategory" required>
+                        <option value="work">Work</option>
+                        <option value="personal">Personal</option>
+                        <option value="hobby">Hobby</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="eventDescription">Description</label>
+                    <textarea class="form-input form-textarea" id="eventDescription"></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="saveBtn">Save Event</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="notification" id="notification"></div>
+
+    <footer style="text-align:center; padding:20px; font-size:1rem; color:#ffffff; user-select:none;">
+        Made with ❤️ by Durgesh
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
